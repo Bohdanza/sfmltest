@@ -7,10 +7,8 @@
             "args": [
                 "-ID:\\sfml\\SFML-3.0.0\\include",
                 "-c",
-                "${file}",
-                "-g",
-                "-o",
-                "${fileDirname}\\build\\${fileBasenameNoExtension}.o"
+                "*.cpp",
+                "-g"
             ],
             "options": {
                 "cwd": "${fileDirname}"
