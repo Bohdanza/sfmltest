@@ -1,4 +1,4 @@
 # ninja log v6
-32	3483	7608480851105967	CMakeFiles/SfmlSetup.dir/main.cpp.obj	70a1f4288ab64f06
-3483	3671	7608480885583453	SfmlSetup.exe	2d3e2e1b2ff85c4c
-37	907	7608480851152274	CMakeFiles/SfmlSetup.dir/myclass.cpp.obj	27d1f0085e744fea
+8	3721	7608482913085675	CMakeFiles/SfmlSetup.dir/main.cpp.obj	ffe455cbc61b43
+3721	4334	7608482950196678	SfmlSetup.exe	ac9e480f645a8486
+14	981	7608482913155694	CMakeFiles/SfmlSetup.dir/myclass.cpp.obj	ac92118f7df1fecb
