@@ -1,3 +1,0 @@
-D:/cpp2/sfmltest/out/build/Mingw64/CMakeFiles/SfmlSetup.dir
-D:/cpp2/sfmltest/out/build/Mingw64/CMakeFiles/edit_cache.dir
-D:/cpp2/sfmltest/out/build/Mingw64/CMakeFiles/rebuild_cache.dir
