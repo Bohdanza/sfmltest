@@ -1,0 +1,13 @@
+{
+    "tasks": [
+        {
+            "label": "Cmake build",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/out"
+            },
+            "command": "cmake \"MinGW Makefiles\"  ${workspaceFolder}",
+        }
+    ],
+    "version": "2.0.0"
+}

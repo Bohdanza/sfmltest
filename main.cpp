@@ -3,29 +3,34 @@
 #include <SFML/Graphics.hpp>
 #include "myclass.hpp"
 
+using namespace sf;
+
 int main()
 {
-    Class1 b;
-    
-    // create the window
-    sf::RenderWindow window(sf::VideoMode({500, 600}), "My window");
+    Texture bullsBody("Content/bull.png");
+    bullsBody.setSmooth(false);
 
-    // run the program as long as the window is open
+    Sprite bull(bullsBody);
+    bull.setPosition({10, 10});
+    bull.scale({4, 4});
+
+    // create the window 
+    RenderWindow window(sf::VideoMode({500, 600}), "My window");
+
     while (window.isOpen())
     {
-        // check all the window's events that were triggered since the last iteration of the loop
+        // check all the window's events that wer e triggered since the last iteration of the loop
         while (const std::optional event = window.pollEvent())
         {
             // "close requested" event: we close the window
-            if (event->is<sf::Event::Closed>())
+            if (event->is<Event::Closed>())
                 window.close();
         }
 
         // clear the window with black color
         window.clear(sf::Color::Black);
 
-        // draw everything here...
-        // window.draw(...);
+        window.draw(bull);
 
         // end the current frame
         window.display();

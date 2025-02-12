@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "SFMLSetup Debug",
+            "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/out/build/Mingw64/SfmlSetup.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/out/build/Mingw64/",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
