@@ -5,17 +5,39 @@
 
 using namespace sf;
 
+void convertImage(Image &source, Image &result)
+{
+    Vector2 resultSize=result.getSize();
+
+    for(unsigned int i=0; i<resultSize.y; i++)
+        for(unsigned int j=0; j<resultSize.x; j++)
+        {
+            unsigned char r=(source.getPixel({j*3, i}).r>0)*255;
+            unsigned char g=(source.getPixel({j*3+1, i}).r>0)*255;
+            unsigned char b=(source.getPixel({j*3+2, i}).r>0)*255;
+            
+            result.setPixel({j,i}, Color(r, g, b));
+        }
+}
+
 int main()
 {
-    Texture bullsBody("Content/bull.png");
-    bullsBody.setSmooth(false);
-
-    Sprite bull(bullsBody);
-    bull.setPosition({10, 10});
-    bull.scale({4, 4});
-
-    // create the window 
+    // create the window
     RenderWindow window(sf::VideoMode({500, 600}), "My window");
+    
+    Image sourceImage("Content/source.png");
+
+    Vector2 rsz=sourceImage.getSize();
+
+    Image resultImage({rsz.x/3, rsz.y}, Color::Black);
+
+    convertImage(sourceImage, resultImage);
+
+    Texture mainTexture;
+    mainTexture.loadFromImage(resultImage);
+    Sprite mainSprite(mainTexture);
+
+    mainSprite.setPosition({50, 50});
 
     while (window.isOpen())
     {
@@ -28,9 +50,9 @@ int main()
         }
 
         // clear the window with black color
-        window.clear(sf::Color::Black);
+        window.clear(sf::Color::White);
 
-        window.draw(bull);
+        window.draw(mainSprite);
 
         // end the current frame
         window.display();
