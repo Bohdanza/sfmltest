@@ -23,8 +23,8 @@ void convertImage(Image &source, Image &result)
 int main()
 {
     // create the window
-    RenderWindow window(sf::VideoMode({500, 600}), "My window");
-    
+    RenderWindow window(sf::VideoMode({600, 600}), "My window");
+
     Image sourceImage("Content/source.png");
 
     Vector2 rsz=sourceImage.getSize();

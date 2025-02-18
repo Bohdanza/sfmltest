@@ -1,4 +1,9 @@
 {
+    "debugBinaryPath": "\\out\\build\\Debug\\",
+    "releaseBinaryPath": "\\out\\build\\Release\\",
+
+    "cmake.useCMakePresets": "always",
+    "cmake.options.statusBarVisibility": "visible",
     "files.associations": {
         "*.tcc": "cpp",
         "deque": "cpp",

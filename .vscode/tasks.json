@@ -1,13 +1,29 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
-            "label": "Cmake build",
+            "label": "Debug build",
             "type": "shell",
+            "command": "cmake --build ${workspaceFolder}${config:debugBinaryPath} --preset Debug -- -j 4",
             "options": {
-                "cwd": "${workspaceFolder}/out"
+                "cwd": ""
             },
-            "command": "cmake \"MinGW Makefiles\"  ${workspaceFolder}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Release build",
+            "type": "shell",
+            "command": "cmake --build ${workspaceFolder}${config:releaseBinaryPath} --preset Release -- -j 4",
+            "options": {
+                "cwd": ""
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

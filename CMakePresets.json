@@ -2,17 +2,53 @@
     "version": 8,
     "configurePresets": [
         {
-            "name": "Mingw64",
-            "displayName": "GCC 14.2.0 x86_64-w64-mingw32",
-            "description": "Using compilers: C = D:\\mingw64\\bin\\gcc.exe, CXX = D:\\mingw64\\bin\\g++.exe",
+            "hidden": true,
+            "name": "base_config",
+            "displayName": "Mingw base configuration",
+            "description": "Serves as a base for Debug, Release and anything you wish for",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_C_COMPILER": "D:/mingw64/bin/gcc.exe",
-                "CMAKE_CXX_COMPILER": "D:/mingw64/bin/g++.exe",
+                "CMAKE_C_COMPILER": "gcc.exe",
+                "CMAKE_CXX_COMPILER": "g++.exe"
+            }
+        },
+        {
+            "hidden": false,
+            "name": "Debug_config",
+            "displayName": "Mingw debug",
+            "description": "It's debug!",
+            "inherits": "base_config",
+            "binaryDir": "${sourceDir}\\out\\build\\Debug\\",
+            "cacheVariables": 
+            {
                 "CMAKE_BUILD_TYPE": "Debug"
             }
+        },
+        {
+            "hidden": false,
+            "name": "Release_config",
+            "displayName": "Mingw release",
+            "description": "It's release!",
+            "inherits": "base_config",
+            "binaryDir": "${sourceDir}\\out\\build\\Release\\",
+            "cacheVariables": 
+            {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Debug",
+            "displayName": "Build Debug",
+            "configurePreset": "Debug_config"
+        },
+        {
+            "name": "Release",
+            "displayName": "Build Release",
+            "configurePreset": "Release_config"
         }
     ]
 }
